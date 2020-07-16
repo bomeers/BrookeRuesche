@@ -6,4 +6,9 @@ html {
 
 .links a {
     text-decoration: none;
+    color: #7B52A0;
+}
+
+.links a:hover {
+    color: #b28fd1;
 }
