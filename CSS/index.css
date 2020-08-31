@@ -1,25 +1,68 @@
-#background {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../Images/background/brfitness-2.jpg");
+.navbar li {
+    display: inline;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: larger;
+}
+
+#hero-image {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-color: #474747;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100%;
+    position: relative;
+    z-index: 2;
+    text-align: center;
 }
 
-.center-text-wrapper {
-    position: absolute;
-    z-index: 100;
-    width: 100%;
-    height: 100%;
+/* #hero-image h1 {
+    position: relative;
     color: white;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transform: rotate(45deg);
+    top: 150px;
 }
+
+#hero-image a {
+    text-decoration: none;
+} */
 
 .center-logo {
-    height: 300px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.title {
+    font-family: "League Gothic";
+    font-size: 75px;
+    padding: 50px;
+}
+
+.about {
+    height: 600px;
+    color: white;
+    background-color: #1b1b1b;
+}
+
+.schedule {
+    height: 600px;
+    color: white;
+    background-color: #474747;
+}
+
+.shop {
+    height: 600px;
+    color: black;
+    background-color: #fff;
+}
+
+.contact {
+    height: 600px;
+    color: white;
+    background-color: #1b1b1b;
 }
 
 @media only screen and (max-width: 600px) {
