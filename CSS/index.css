@@ -5,7 +5,7 @@
     font-size: larger;
 }
 
-#hero-image {
+#home {
     padding-top: 200px;
     padding-bottom: 200px;
     background-color: #474747;
@@ -17,14 +17,14 @@
     text-align: center;
 }
 
-/* #hero-image h1 {
+/* #home h1 {
     position: relative;
     color: white;
     transform: rotate(45deg);
     top: 150px;
 }
 
-#hero-image a {
+#home a {
     text-decoration: none;
 } */
 
@@ -41,25 +41,25 @@
     padding: 50px;
 }
 
-.about {
+#about {
     height: 600px;
     color: white;
     background-color: #1b1b1b;
 }
 
-.schedule {
+#schedule {
     height: 600px;
     color: white;
     background-color: #474747;
 }
 
-.shop {
+#shop {
     height: 600px;
     color: black;
     background-color: #fff;
 }
 
-.contact {
+#contact {
     height: 600px;
     color: white;
     background-color: #1b1b1b;
