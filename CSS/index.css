@@ -1,10 +1,3 @@
-.navbar li {
-    display: inline;
-    padding-left: 25px;
-    padding-right: 25px;
-    font-size: larger;
-}
-
 #home {
     padding-top: 200px;
     padding-bottom: 200px;
@@ -17,17 +10,6 @@
     text-align: center;
 }
 
-/* #home h1 {
-    position: relative;
-    color: white;
-    transform: rotate(45deg);
-    top: 150px;
-}
-
-#home a {
-    text-decoration: none;
-} */
-
 .center-logo {
     height: 200px;
     margin-left: auto;
@@ -35,10 +17,12 @@
     display: block;
 }
 
-.title {
+.title a {
     font-family: "League Gothic";
     font-size: 75px;
     padding: 50px;
+    color: white;
+    text-decoration: none;
 }
 
 #about {
@@ -48,7 +32,7 @@
 }
 
 #schedule {
-    height: 600px;
+    height: 1000px;
     color: white;
     background-color: #474747;
 }
@@ -60,9 +44,36 @@
 }
 
 #contact {
-    height: 600px;
+    height: 400px;
     color: white;
     background-color: #1b1b1b;
+}
+
+.calendar {
+    border-width: 0;
+    height: 80%;
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+.shop-items {
+    display: inline;
+}
+
+.shop-items li {
+    padding: 20px;
+    display: inline;
+}
+
+.shop-items img {
+    height: 60%;
+}
+
+.contact-links {
+    position: relative;
+    text-align: center;
+    float: center;
 }
 
 @media only screen and (max-width: 600px) {

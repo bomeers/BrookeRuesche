@@ -29,6 +29,15 @@ a:hover {
 
 .navbar ul {
     padding: 0;
+    display: block;
+    margin: auto;
+}
+
+.navbar li {
+    display: inline;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: larger;
 }
 
 .navbar-active {
