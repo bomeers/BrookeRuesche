@@ -1,0 +1,98 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  background-color: #1b1b1b;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #7B52A0;
+}
+
+a:hover {
+    color: #b28fd1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    width: 50%;
+    z-index: 3;
+    width: 50%;
+    position: fixed;
+    left: 25%;
+    right: 25%;
+}
+
+.navbar ul {
+    padding: 0;
+    display: block;
+    margin: auto;
+}
+
+.navbar li {
+    display: inline;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: larger;
+}
+
+.navbar-active {
+    color: #b28fd1;
+}
+
+.navbar-background {
+    position: fixed;
+    width: 100%;
+    height: 72.8px;
+    top: 0;
+    background-color: black;
+    z-index: 1;
+}
+
+.navbar-logo {
+    z-index: 1;
+    height: 100%;
+    margin-left: 20px;
+}
+
+.navbar-icons {
+    float: right;
+    padding-top: 8px;
+    margin-right: 20px;
+}
+
+.navbar-icons li {
+    display: inline;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-icons img {
+    width: 25px;
+}
+
+#home {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-color: #474747;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../public/images/background/brfitness-2.jpg"); */
+}
+
+.center-logo {
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
