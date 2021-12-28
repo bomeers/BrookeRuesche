@@ -3,19 +3,16 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link'
-
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import HomeIcon from '@mui/icons-material/Home';
+import CalculateIcon from '@mui/icons-material/Calculate';
 
 export default function Navbar() {
     const [state, setState] = React.useState({
@@ -37,20 +34,19 @@ export default function Navbar() {
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
-            <List>
+            <List sx={{ color: '#fff' }}>
                 <ListItem>
                     <ListItemButton component="a" href="/">
                         <ListItemIcon>
-                            <MailIcon />
+                            <HomeIcon sx={{ color: '#fff' }} />
                         </ListItemIcon>
                         <ListItemText primary={'Home'} />
                     </ListItemButton>
                 </ListItem>
-
                 <ListItem>
                     <ListItemButton component="a" href="/bmiCalculator">
                         <ListItemIcon>
-                            <MailIcon />
+                            <CalculateIcon sx={{ color: '#fff' }} />
                         </ListItemIcon>
                         <ListItemText primary={'BMI Calculator'} />
                     </ListItemButton>
