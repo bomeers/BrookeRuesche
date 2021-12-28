@@ -11,7 +11,7 @@ export default function Home() {
                 <title>Home | {siteTitle}</title>
             </Head>
             <About/>
-            <Schedule/>
+            {/* <Schedule/> */}
             <Shop/>
         </Layout>
     )

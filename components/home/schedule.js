@@ -1,6 +1,6 @@
 import styles from '../../styles/home.module.css'
 
-export default function About() {
+export default function Schedule() {
     return (
         <section className={styles.schedule}>
             <br />
