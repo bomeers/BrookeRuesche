@@ -19,6 +19,9 @@ const BRFtheme = createTheme({
             default: '#1f1f1f',
             paper: '#353434',
         },
+        text: {
+            primary: '#fff',
+        },
     },
 });
 
