@@ -8,19 +8,22 @@ const name = 'Brooke Ruesche'
 export const siteTitle = 'BR Fitness'
 const BRFtheme = createTheme({
     palette: {
-        type: 'dark',
         primary: {
             main: '#7b52a0',
+            contrastText: '#fff'
         },
         secondary: {
             main: '#401a51',
+            contrastText: '#fff'
         },
         background: {
             default: '#1f1f1f',
             paper: '#353434',
+            contrastText: '#fff'
         },
         text: {
             primary: '#fff',
+            secondary: '#fff'
         },
     },
 });

@@ -10,9 +10,9 @@ export default function Home() {
             <Head>
                 <title>Home | {siteTitle}</title>
             </Head>
-            <About/>
-            {/* <Schedule/> */}
-            <Shop/>
+            <About />
+            <Schedule />
+            <Shop />
         </Layout>
     )
 }
