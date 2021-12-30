@@ -56,7 +56,7 @@ export default function Navbar() {
     );
 
     return (
-        <AppBar position="fixed" sx={{ backgroundColor: '#212121' }}>
+        <AppBar position="fixed" sx={{ backgroundColor: '#1b1b1b' }}>
             <Toolbar>
                 <IconButton
                     size="large"
