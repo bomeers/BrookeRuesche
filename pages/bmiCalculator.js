@@ -1,9 +1,7 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout.js'
-import Typography from '@mui/material/Typography'
-import Container from '@mui/material/Container'
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
+import { Typography, Container, TextField, Button, Box } from '@mui/material'
+import { width } from '@mui/material/node_modules/@mui/system'
 
 export default function bmiCalculator() {
 
@@ -22,48 +20,41 @@ export default function bmiCalculator() {
             <Head>
                 <title>BMI Calculator | {siteTitle}</title>
             </Head>
-            {/* <Paper sx={{
-                backgroundImage: 'url("https://picsum.photos/1920/300?grayscale")',
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-                paddingTop: '64px'
-            }}>
-                <Container sx={{ height: '250px' }}>
-                    <Typography align='left' variant='h2' sx={{ color: '#fff', lineHeight: '250px' }}>BMI Calculator</Typography>
-                </Container>
-            </Paper> */}
-            <Container sx={{ marginTop: '104px', alignItems: 'center', justifyContent: 'center' }}>
-                <Typography align='center' variant='h4' sx={{ color: '#fff' }}>Enter Your Details</Typography>
-                <form onSubmit={calculateBMI}>
-                    <TextField id="outlined-basic"
-                        name='height'
-                        label="Height"
-                        variant="outlined"
-                        type='text'
-                        autoComplete='height'
-                        required
-                        sx={{
-                            label: { color: 'white' },
-                            fieldset: { borderColor: 'white' },
-                            input: { color: 'white' },
-                        }} />
+            <Typography
+                align='center'
+                variant='h4'
+                sx={{
+                    color: '#fff',
+                    marginTop: '104px',
+                    marginBottom: '50px'
+                }}
+            >BMI Calculator</Typography>
+            <Box
+                component="form"
+                noValidate
+                autoComplete="off"
+                display="flex"
+                alignItems="center"
+                justifyContent="center">
+                <TextField
+                    id="outlined-number"
+                    label="Height (Feet)"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                />
 
-                    <TextField id="outlined-basic"
-                        name='weight'
-                        label="Weight"
-                        variant="outlined"
-                        type='text'
-                        autoComplete='weight'
-                        required
-                        sx={{
-                            label: { color: 'white' },
-                            fieldset: { borderColor: 'white' },
-                            input: { color: 'white' },
-                        }} />
-
-                    <Button variant="contained" type='submit'>Submit</Button>
-                </form>
-            </Container>
+                <TextField
+                    id="outlined-number"
+                    label="Height (Inches)"
+                    type="number"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                />
+                <Button variant="contained" type='submit'>Submit</Button>
+            </Box>
         </Layout>
     );
 };

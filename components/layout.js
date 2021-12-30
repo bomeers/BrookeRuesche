@@ -8,6 +8,7 @@ const name = 'Brooke Ruesche'
 export const siteTitle = 'BR Fitness'
 const BRFtheme = createTheme({
     palette: {
+        mode: 'dark',
         primary: {
             main: '#7b52a0',
             contrastText: '#fff'
@@ -19,7 +20,6 @@ const BRFtheme = createTheme({
         background: {
             default: '#1f1f1f',
             paper: '#353434',
-            contrastText: '#fff'
         },
         text: {
             primary: '#fff',

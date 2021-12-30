@@ -10,8 +10,8 @@ export default function About() {
         //         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Blandit massa enim nec dui nunc. Ut pharetra sit amet aliquam id diam maecenas ultricies.             </p>
         // </section>
 
-        <Container>
-            <Typography variant='h3' align='left' sx={{ color: 'white' }}>Schedule an appointment</Typography>
+        <Container sx={{ paddingTop: '100px', paddingBottom: '100px' }}>
+            <Typography variant='h3' align='left' sx={{ color: 'white' }}>About BRFitness</Typography>
             <Typography variant='p' align='left' sx={{ color: 'white' }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Blandit massa enim nec dui nunc. Ut pharetra sit amet aliquam id diam maecenas ultricies.
             </Typography>

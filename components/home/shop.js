@@ -1,105 +1,33 @@
 import styles from '../../styles/home.module.css'
 import Image from 'next/image'
 import * as React from 'react';
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
+import { styled } from '@mui/material/styles';
+import { Container, Paper, Grid } from '@mui/material';
 
 export default function Shop() {
-  return (
-    <ImageList sx={{ width: 500, height: 450 }}>
-      {itemData.map((item) => (
-        <ImageListItem key={item.img}>
-          <img
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            alt={item.title}
-            loading="lazy"
-          />
-          <ImageListItemBar
-            title={item.title}
-            subtitle={<span>by: {item.author}</span>}
-            position="below"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
-  );
+
+    const Item = styled(Paper)(({ theme }) => ({
+        ...theme.typography.body2,
+        padding: theme.spacing(1),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    }));
+
+    return (
+        <Container sx={{ paddingTop: '100px', paddingBottom: '100px' }}>
+            <Grid container spacing={2}>
+                <Grid item xs={4}>
+                    <Item>xs=8</Item>
+                </Grid>
+                {/* <Grid item xs={4}>
+                    <Item>xs=4</Item>
+                    <Image layout='fill' src='../../public/images/merch/white shirt.png' />
+                </Grid>
+                <Grid item xs={4}>
+                    <Item>xs=4</Item>
+                    <Image layout='fill' src='../../public/images/merch/black shirt.png' />
+                </Grid> */}
+            </Grid>
+        </Container>
+    );
 }
-
-const itemData = [
-  {
-    img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
-    author: '@bkristastucchio',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
-    author: '@rollelflex_graphy726',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-    author: '@helloimnik',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-    author: '@nolanissac',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-    author: '@hjrc33',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-    author: '@arwinneil',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-    author: '@tjdragotta',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-    author: '@katie_wasserman',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-    author: '@silverdalex',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-    author: '@shelleypauls',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-    author: '@peterlaster',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-    author: '@southside_customs',
-  },
-];
-
-// export default function Shop() {
-//     return (
-//         <section className={styles.shop}>
-//             <br />
-//             <h1 className={styles.titleBlack}><a href="#shop" style={{ color: "000" }}>Grab some merch</a></h1>
-//             <br />
-//             <ul className={styles.shopItems}>
-//                 <li><Image src="/images/merch/black shirt.png" height="400" width="400" /></li>
-//                 <li><Image src="/images/merch/white shirt.png" height="400" width="400" /></li>
-//             </ul>
-//         </section>
-//     );
-// }
