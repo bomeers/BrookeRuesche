@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout.js'
-import { Typography, Container, TextField, Button, Box } from '@mui/material'
-import { width } from '@mui/material/node_modules/@mui/system'
+import { Typography, Container, TextField, Button, Box, ThemeProvider, InputAdornment } from '@mui/material'
+import theme from '../public/theme'
 
 export default function bmiCalculator() {
 
@@ -20,42 +20,59 @@ export default function bmiCalculator() {
             <Head>
                 <title>BMI Calculator | {siteTitle}</title>
             </Head>
-            <Typography
-                align='center'
-                variant='h4'
-                sx={{
-                    color: '#fff',
-                    marginTop: '104px',
-                    marginBottom: '50px'
-                }}
-            >BMI Calculator</Typography>
-            <Box
-                component="form"
-                noValidate
-                autoComplete="off"
-                display="flex"
-                alignItems="center"
-                justifyContent="center">
-                <TextField
-                    id="outlined-number"
-                    label="Height (Feet)"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
+            <Box my={20}>
+                <ThemeProvider theme={theme}>
+                    <Typography
+                        align='center'
+                        variant='h4'
+                        sx={{
+                            color: '#fff',
+                            marginTop: '104px',
+                            marginBottom: '50px'
+                        }}
+                    >BMI Calculator</Typography>
+                    <Box
+                        component="form"
+                        noValidate
+                        autoComplete="off"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center">
 
-                <TextField
-                    id="outlined-number"
-                    label="Height (Inches)"
-                    type="number"
-                    InputLabelProps={{
-                        shrink: true,
-                    }}
-                />
-                <Button variant="contained" type='submit'>Submit</Button>
-            </Box>
-        </Layout>
+                        <TextField
+                            label="Height (Feet)"
+                            id="outlined-start-adornment"
+                            type='number'
+                            sx={{ marginX: 2 }}
+                            InputProps={{
+                                startAdornment: <InputAdornment position="start">ft</InputAdornment>,
+                            }}
+                        />
+
+                        <TextField
+                            label="Height (Feet)"
+                            id="outlined-start-adornment"
+                            type='number'
+                            sx={{ marginX: 2 }}
+                            InputProps={{
+                                startAdornment: <InputAdornment position="start">in</InputAdornment>,
+                            }}
+                        />
+
+                        <TextField
+                            label="Weight"
+                            id="outlined-start-adornment"
+                            type='number'
+                            sx={{ marginX: 2 }}
+                            InputProps={{
+                                startAdornment: <InputAdornment position="start">lbs</InputAdornment>,
+                            }}
+                        />
+                        <Button variant="contained" type='submit'>Submit</Button>
+                    </Box>
+                </ThemeProvider>
+            </Box >
+        </Layout >
     );
 };
 
