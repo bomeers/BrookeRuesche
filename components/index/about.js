@@ -4,7 +4,7 @@ import theme from '../../public/theme'
 
 export default function About() {
     return (
-        <Box my={20}>
+        <Box my={10}>
             <ThemeProvider theme={theme}>
                 <Container>
                     <Typography variant='h3' align='left' sx={{ color: 'white' }}>About BRFitness</Typography>

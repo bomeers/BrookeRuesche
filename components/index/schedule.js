@@ -11,7 +11,7 @@ export default function Schedule() {
     const [value, setValue] = React.useState(new Date());
 
     return (
-        <Box my={20}>
+        <Box my={10}>
             <Container>
                 <Typography variant='h3' align='left' sx={{ color: 'white' }}>Schedule an appointment</Typography>
                 <Box

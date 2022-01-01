@@ -6,6 +6,7 @@ body {
     background-color: #212121;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    overflow-x: hidden;
 }
 
 a {
@@ -18,8 +19,8 @@ a:hover {
 }
 
 #home {
-    padding-top: 250px;
-    padding-bottom: 250px;
+    /* padding-top: 250px;
+    padding-bottom: 250px; */
     background-color: #474747;
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,11 +28,9 @@ a:hover {
     position: relative;
     z-index: 2;
     text-align: center;
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../public/images/background/brfitness-2.jpg"); */
 }
 
 .center-logo {
-    height: 200px;
     margin-left: auto;
     margin-right: auto;
     display: block;
