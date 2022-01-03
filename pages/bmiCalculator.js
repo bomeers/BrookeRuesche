@@ -33,10 +33,9 @@ export default function bmiCalculator() {
             </Head>
             <Box my={20}>
                 <form onSubmit={calculateBMI}>
-                    <Grid container alignItems="center" justify="center" direction="column">
+                    <Grid container alignItems="center" justifyContent="center" direction="column">
                         <Grid item>
                             <TextField
-                                variant="outlined"
                                 name="feet"
                                 label="Height (feet)"
                                 type="number"

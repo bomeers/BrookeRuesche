@@ -1,43 +1,42 @@
 import styles from '../../styles/home.module.css'
 import * as React from 'react';
-import { Container, Typography, Button, TextField, Box } from '@mui/material';
-import isWeekend from 'date-fns/isWeekend';
+import { Container, Typography, Button, TextField, Box, Grid } from '@mui/material';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import StaticDatePicker from '@mui/lab/StaticDatePicker';
-import theme from '../../public/theme'
+import isWeekend from 'date-fns/isWeekend';
 
 export default function Schedule() {
     const [value, setValue] = React.useState(new Date());
 
     return (
-        <Box my={10}>
-            <Container>
-                <Typography variant='h3' align='left' sx={{ color: 'white' }}>Schedule an appointment</Typography>
-                <Box
-                    component="form"
-                    noValidate
-                    autoComplete="off"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center">
-                    <Container>
-                        <TextField
-                            id="outlined-number"
-                            label="Full Name"
-                            type="text"
-                            required
-                        />
+        <Container>
+            <Typography variant='h3' align='left' sx={{ color: 'white' }}>Schedule an appointment</Typography>
+            <form>
+                <Grid container direction="row" alignItems="center" justifyContent="space-evenly" spacing={2}>
+                    <Grid item>
+                        <div>
+                            <TextField
+                                name="name"
+                                label="Full Name"
+                                type="text"
+                            // value={formValues.feet}
+                            // onChange={handleInputChange}
+                            />
+                        </div>
+                        <br />
+                        <div>
+                            <TextField
+                                name="email"
+                                label="Email"
+                                type="email"
+                            // value={formValues.inches}
+                            // onChange={handleInputChange}
+                            />
+                        </div>
 
-                        <TextField
-                            id="outlined-number"
-                            label="Email"
-                            type="email"
-                            required
-                        />
-                    </Container>
-
-                    <Container maxWidth='sm'>
+                    </Grid>
+                    <Grid item>
                         <LocalizationProvider dateAdapter={AdapterDateFns}>
                             <StaticDatePicker
                                 orientation="landscape"
@@ -53,10 +52,9 @@ export default function Schedule() {
                                 renderInput={(params) => <TextField {...params} />}
                             />
                         </LocalizationProvider>
-                    </Container>
-                </Box>
-            </Container >
-        </Box>
-
+                    </Grid>
+                </Grid>
+            </form>
+        </Container >
     );
 }
