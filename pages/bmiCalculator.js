@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import React, { useState } from "react";
 import Layout, { siteTitle } from '../components/layout.js'
-import { TextField, Button, Box, ThemeProvider, Grid, InputAdornment } from '@mui/material'
-import theme from '../public/theme'
+import { TextField, Button, Box, Grid, InputAdornment } from '@mui/material'
 
 const defaultValues = {
     feet: "",
@@ -33,51 +32,49 @@ export default function bmiCalculator() {
                 <title>BMI Calculator | {siteTitle}</title>
             </Head>
             <Box my={20}>
-                <ThemeProvider theme={theme}>
-                    <form onSubmit={calculateBMI}>
-                        <Grid container alignItems="center" justify="center" direction="column">
-                            <Grid item>
-                                <TextField
-                                    variant="filled"
-                                    name="feet"
-                                    label="Height (feet)"
-                                    type="number"
-                                    value={formValues.feet}
-                                    onChange={handleInputChange}
-                                    InputProps={{
-                                        startAdornment: <InputAdornment position="start">ft</InputAdornment>,
-                                    }}
-                                    sx={{ mx: 1 }}
-                                />
-                                <TextField
-                                    name="inches"
-                                    label="Height (inches)"
-                                    type="number"
-                                    value={formValues.inches}
-                                    onChange={handleInputChange}
-                                    InputProps={{
-                                        startAdornment: <InputAdornment position="start">in</InputAdornment>,
-                                    }}
-                                    sx={{ mx: 1 }}
-                                />
-                                <TextField
-                                    name="weight"
-                                    label="Weight"
-                                    type="number"
-                                    value={formValues.weight}
-                                    onChange={handleInputChange}
-                                    InputProps={{
-                                        startAdornment: <InputAdornment position="start">lbs</InputAdornment>,
-                                    }}
-                                    sx={{ mx: 1 }}
-                                />
-                            </Grid>
-                            <Button variant="contained" color="primary" type="submit" sx={{ my: 5 }}>
-                                Submit
-                            </Button>
+                <form onSubmit={calculateBMI}>
+                    <Grid container alignItems="center" justify="center" direction="column">
+                        <Grid item>
+                            <TextField
+                                variant="outlined"
+                                name="feet"
+                                label="Height (feet)"
+                                type="number"
+                                value={formValues.feet}
+                                onChange={handleInputChange}
+                                InputProps={{
+                                    startAdornment: <InputAdornment position="start">ft</InputAdornment>,
+                                }}
+                                sx={{ mx: 1 }}
+                            />
+                            <TextField
+                                name="inches"
+                                label="Height (inches)"
+                                type="number"
+                                value={formValues.inches}
+                                onChange={handleInputChange}
+                                InputProps={{
+                                    startAdornment: <InputAdornment position="start">in</InputAdornment>,
+                                }}
+                                sx={{ mx: 1 }}
+                            />
+                            <TextField
+                                name="weight"
+                                label="Weight"
+                                type="number"
+                                value={formValues.weight}
+                                onChange={handleInputChange}
+                                InputProps={{
+                                    startAdornment: <InputAdornment position="start">lbs</InputAdornment>,
+                                }}
+                                sx={{ mx: 1 }}
+                            />
                         </Grid>
-                    </form>
-                </ThemeProvider>
+                        <Button variant="contained" color="primary" type="submit" sx={{ my: 5 }}>
+                            Submit
+                        </Button>
+                    </Grid>
+                </form>
             </Box >
         </Layout >
     );

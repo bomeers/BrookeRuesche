@@ -17,9 +17,48 @@ const BRFtheme = createTheme({
         },
         text: {
             primary: '#fff',
-            secondary: '#fff'
+            secondary: '#fff',
+            disabled: '#9d9d9d'
         },
     },
+
+    components: {
+        MuiTypography: {
+            styleOverrides: {
+                root: {
+                    color: '#fff'
+                }
+            }
+        },
+        MuiSvgIcon: {
+            styleOverrides: {
+                root: {
+                    color: '#fff'
+                }
+            }
+        },
+        MuiCalendarPicker: {
+            styleOverrides: {
+                root: {
+                    color: '#fff'
+                }
+            }
+        },
+        MuiOutlinedInput: {
+            styleOverrides: {
+                notchedOutline: {
+                    borderColor: '#fff'
+                }
+            }
+        },
+        MuiFilledInput: {
+            styleOverrides: {
+                root: {
+                    backgroundColor: '#333'
+                }
+            }
+        }
+    }
 });
 
 export default BRFtheme;

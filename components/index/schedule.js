@@ -1,6 +1,6 @@
 import styles from '../../styles/home.module.css'
 import * as React from 'react';
-import { Container, Typography, Button, TextField, Box, ThemeProvider } from '@mui/material';
+import { Container, Typography, Button, TextField, Box } from '@mui/material';
 import isWeekend from 'date-fns/isWeekend';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
@@ -21,24 +21,21 @@ export default function Schedule() {
                     display="flex"
                     alignItems="center"
                     justifyContent="center">
-                    <ThemeProvider theme={theme}>
-                        <Container>
-                            <TextField
-                                id="outlined-number"
-                                label="Full Name"
-                                type="text"
-                                required
-                            />
+                    <Container>
+                        <TextField
+                            id="outlined-number"
+                            label="Full Name"
+                            type="text"
+                            required
+                        />
 
-                            <TextField
-                                id="outlined-number"
-                                label="Email"
-                                type="email"
-                                required
-                            />
-                        </Container>
-
-                    </ThemeProvider>
+                        <TextField
+                            id="outlined-number"
+                            label="Email"
+                            type="email"
+                            required
+                        />
+                    </Container>
 
                     <Container maxWidth='sm'>
                         <LocalizationProvider dateAdapter={AdapterDateFns}>
