@@ -44,6 +44,5 @@ This app is deployed to the [Vercel Platform](https://vercel.com)
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ## To Be Implemented:
----
 - [ ] Full screen ThreeJs landing page with workout equipment scattered all over the screen
 - [ ] attach light to mouse to view models on screen
