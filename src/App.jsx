@@ -1,22 +1,18 @@
 import { useState } from 'react'
-import logo from '/images/logos/logo-white.svg'
-import Navbar from './components/navbar'
-import './App.css'
+import './styles/App.css'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Home from './pages/home'
 
 function App() {
     const [count, setCount] = useState(0)
 
     return (
-        <div className="App">
-            <Navbar />
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <video autoplay muted loop id="myVideo">
-                    <source src="/public/video/promo.mp4" type="video/mp4" />
-                    Your browser does not support HTML5 video.
-                </video>
-            </header>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route exact path='/' element={<Home />} />
+                <Route exact path='/' element={<Navigate replace to='/home' />} />
+            </Routes>
+        </BrowserRouter>
     )
 }
 

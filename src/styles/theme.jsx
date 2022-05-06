@@ -13,7 +13,7 @@ const BRFtheme = createTheme({
         },
         background: {
             default: '#1f1f1f',
-            paper: '#353434',
+            paper: '#212121',
         },
         text: {
             primary: '#fff',
