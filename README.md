@@ -14,8 +14,6 @@
 </p>
 <br>
 
-
-
 ## Getting Started
 
 First, run the development server:
@@ -28,21 +26,8 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 ## Deploy on Vercel
-
 [Deployments can be found here](https://github.com/bomeers/BrookeRuesche/deployments/activity_log?environment=Preview)
 
 This app is deployed to the [Vercel Platform](https://vercel.com)
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-## To Be Implemented:
-- [ ] Full screen ThreeJs landing page with workout equipment scattered all over the screen
-- [ ] attach light to mouse to view models on screen

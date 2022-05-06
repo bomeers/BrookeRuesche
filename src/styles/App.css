@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Dark-Overlay {
+    background-color: rgba(0, 0, 0, .7);
+    min-height: 100vh;
+    min-width: 100vw;
+    position: absolute;
+    z-index: 1;
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+}
+
+#myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+.links {
+    z-index: 3;
+}
+
+.links a {
+    text-decoration: none;
+    color: #7B52A0;
+    padding: 0 50px 0 50px;
+}
+
+.links a:hover {
+    color: #b28fd1;
+}
+
+#Arrow {
+    z-index: 4;
+    transform: rotate(180deg);
+    position: absolute;
+    bottom: 50px;
+}
+
+#Scroll { 
+    z-index: 4;
+    font-size: 20px;
+    position: absolute;
+    bottom: 60px;
+}
+
+#body {
+    background: url('/public/images/background/about.png');
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 200px 40% 200px 10%;
+    position: relative;
+}
+
+#About-Me {
+    font-size: 25px;
+    text-align: left;
+}
