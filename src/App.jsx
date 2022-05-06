@@ -12,7 +12,7 @@ function App() {
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <video autoplay muted loop id="myVideo">
-                    <source src="rain.mp4" type="video/mp4" />
+                    <source src="/public/video/promo.mp4" type="video/mp4" />
                     Your browser does not support HTML5 video.
                 </video>
             </header>
