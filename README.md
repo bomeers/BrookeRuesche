@@ -31,3 +31,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 [Deployments can be found here](https://github.com/bomeers/BrookeRuesche/deployments/activity_log?environment=Preview)
 
 This app is deployed to the [Vercel Platform](https://vercel.com)
+
+## VSCode Extensions
+- [Todo Tree by Gruntfuggly](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree") | for `TODO:` comments
