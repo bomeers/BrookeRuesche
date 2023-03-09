@@ -5,7 +5,7 @@
   </a>
 
   <p align="center">
-    A <a href="https://nextjs.org/">Next.js</a> website for Brooke Ruesche Fitness
+    A Vite website for Brooke Ruesche Fitness
     <br />
     <a href="https://github.com/bomeers/BrookeRuesche/issues">Report Bug</a>
     ·
