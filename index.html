@@ -1,12 +1,10 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content='text/html, charset=utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-    <link rel="icon" type="image/png" href="Images/logos/R-Logo.svg" />
-    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="CSS/site.css">
+    <meta http-equiv="Content-Type" content="text/html, charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/png" href="Images/logos/R-Logo.svg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/index.css">
     <title>Home | BR Fitness</title>
     <meta name="description" content="Brooke Ruesche Fitness">
@@ -15,7 +13,7 @@
 <body>
     <div class="center-text-wrapper">
         <div class="center-text">
-            <img src="Images/logos/logo-white.svg" class="center-logo" />
+            <img src="Images/logos/logo-white.svg" class="center-logo">
             <br><br><br>
             <h1><strong>This site is being created</strong></h1>
             <br>
@@ -26,9 +24,23 @@
         </div>
     </div>
 
-    <div id="background"></div>
+    <div id="background"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(&quot;./Images/background/brfitness-3.jpg&quot;);">
+    </div>
 
-    <script src="JS/index.js"></script>
+    <script>
+        window.onload = setBackground();
+
+        function setBackground() {
+            var images = ['brfitness-1.jpg', 'brfitness-2.jpg', 'brfitness-3.jpg', 'brfitness-4.jpg', 'brfitness-5.jpg'];
+            var rand = Math.floor(Math.random() * images.length);
+            var background = document.getElementById('background');
+
+            background.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("./Images/background/${images[rand]}")`;
+        }
+    </script>
+
+
 </body>
 
 </html>
