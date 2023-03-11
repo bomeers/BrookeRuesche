@@ -29,13 +29,7 @@ function Home() {
     const ambientLight = new THREE.AmbientLight()
     scene.add(ambientLight)
 
-    // create box
-    // TODO: insert 45lbs weight plate .fbx model to replace cube
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    // scene.add(cube);
-
+    // weight plate custom model
     const fbxLoader = new FBXLoader()
     fbxLoader.load('blender/weight-plate.fbx', (object) => {
         scene.add(object)
