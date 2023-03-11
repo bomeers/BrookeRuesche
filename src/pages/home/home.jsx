@@ -18,8 +18,6 @@ function Home() {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 5;
     const controls = new OrbitControls(camera, renderer.domElement)
-    controls.enableDamping = true
-    controls.target.set(0, 1, 0)
 
     // create lights
     const light = new THREE.PointLight()
@@ -44,9 +42,6 @@ function Home() {
 
     function animate() {
         requestAnimationFrame(animate);
-
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
 
         renderer.render(scene, camera);
     }
