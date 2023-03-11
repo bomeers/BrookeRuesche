@@ -23,7 +23,7 @@ function Home() {
 
     // create lights
     const light = new THREE.PointLight()
-    light.position.set(0.8, 1.4, 1.0)
+    light.position.set(2, 2, 2)
     scene.add(light)
 
     const ambientLight = new THREE.AmbientLight()
@@ -38,16 +38,6 @@ function Home() {
 
     const fbxLoader = new FBXLoader()
     fbxLoader.load('blender/weight-plate.fbx', (object) => {
-        // object.scale.divideScalar(100);
-        // object.traverse(function (child) {
-        //     if ((child as THREE.Mesh).isMesh) {
-        //         // (child as THREE.Mesh).material = material
-        //         if ((child as THREE.Mesh).material) {
-        //             ((child as THREE.Mesh).material as THREE.MeshBasicMaterial).transparent = false
-        //         }
-        //     }
-        // })
-        // object.scale.set(.01, .01, .01)
         scene.add(object)
     },
         (xhr) => {
