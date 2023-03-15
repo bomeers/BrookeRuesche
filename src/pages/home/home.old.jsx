@@ -1,52 +1,150 @@
 import { useState } from 'react'
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader'
+import * as CANNON from 'cannon-es';
 import logo from '/images/logos/logo-white.svg'
-import Footer from '../../components/footer'
-import Navbar from '../../components/navbar'
-import { Button } from '@mui/material';
-import { ThemeProvider } from '@mui/material/styles';
-import BRFtheme from '../../styles/theme'
 
 function Home() {
     const [count, setCount] = useState(0)
 
-    return (
-        <div className="App">
-            <Navbar />
-            <ThemeProvider theme={BRFtheme}>
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo" />
-                    <div className='Dark-Overlay'></div>
-                    <video autoPlay muted loop id="myVideo">
-                        <source src="/video/promo.mp4" type="video/mp4" />
-                        Your browser does not support HTML5 video.
-                    </video>
-                    <p className='links'>
-                        <Button variant="outlined" size="large"><a href='https://www.picktime.com/2ace4f86-b2db-46a7-81b1-428857ff9dd7' target="_blank">SCHEDULE AN APPOINTMENT</a></Button>
-                    </p>
-                    <p id='Scroll'>scroll down</p>
-                    <div id='Arrow'>^</div>
-                </header>
-                <div id='body'>
-                    <div id='About-Me'>
-                        <h2>Hey! I'm Brooke</h2>
-                        <br />
-                        I have been a personal trainer since 2018, studying everything from example 1, example 2, and example 3,
-                        all the way to the more detailed things like example 1 and example 2. I am dedicated to making your experience here great
-                        all while acheiving your goals. Once I've gotten to know you and your goals, I create a custom workout routine to fit your needs.
-                        You also have the option to train from wherever you prefer, so you don't have to worry about an additional cost for a gym membership
-                        if you want to train with me!
-                        <br />
-                        <br />
-                        If you are interested,
-                        <br />
-                        <br />
-                        <Button variant="contained" size="large"><a href='https://www.picktime.com/2ace4f86-b2db-46a7-81b1-428857ff9dd7' target="_blank">schedule an appointment today!</a></Button>
-                    </div>
-                </div>
-                <Footer />
-            </ThemeProvider>
-        </div>
+    // how to build cannon js with custom model https://www.youtube.com/watch?v=P9n6Jaww3Ow
+
+    // scene setup
+    const scene = new THREE.Scene();
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // camera setup
+    const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(0, 20, -30);
+    const orbit = new OrbitControls(camera, renderer.domElement);
+    orbit.update();
+
+    /// models
+    // weight plate custom model
+    let weightPlate;
+    const fbxLoader = new FBXLoader()
+    fbxLoader.load('blender/weight-plate.fbx', (object) => {
+        object.scale.set(1, 1, 1)
+        weightPlate = object
+        scene.add(weightPlate)
+    },
+        (xhr) => { console.log((xhr.loaded / xhr.total) * 100 + '% loaded') },
+        (error) => { console.log(error) }
     )
+
+    const groundGeo = new THREE.PlaneGeometry(30, 30);
+    const groundMat = new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        side: THREE.DoubleSide,
+        wireframe: true
+    });
+    const groundMesh = new THREE.Mesh(groundGeo, groundMat);
+    scene.add(groundMesh);
+
+
+    // cannon world setup
+    const world = new CANNON.World({ gravity: new CANNON.Vec3(0, -9.81, 0) });
+
+    const groundPhysMat = new CANNON.Material();
+
+    const groundBody = new CANNON.Body({
+        //shape: new CANNON.Plane(),
+        //mass: 10
+        shape: new CANNON.Box(new CANNON.Vec3(15, 15, 0.1)),
+        type: CANNON.Body.STATIC,
+        material: groundPhysMat
+    });
+    world.addBody(groundBody);
+    groundBody.quaternion.setFromEuler(-Math.PI / 2, 0, 0);
+
+    const boxPhysMat = new CANNON.Material();
+
+    const boxBody = new CANNON.Body({
+        mass: 1,
+        shape: new CANNON.Box(new CANNON.Vec3(1, 1, 1)),
+        position: new CANNON.Vec3(1, 20, 0),
+        material: boxPhysMat
+    });
+    world.addBody(boxBody);
+
+    boxBody.angularVelocity.set(0, 10, 0);
+    boxBody.angularDamping = 0.5;
+
+    const groundBoxContactMat = new CANNON.ContactMaterial(
+        groundPhysMat,
+        boxPhysMat,
+        { friction: 0.04 }
+    );
+
+    world.addContactMaterial(groundBoxContactMat);
+
+
+    // renderer setup
+    function animate() {
+        world.step(1 / 60);
+
+        groundMesh.position.copy(groundBody.position);
+        groundMesh.quaternion.copy(groundBody.quaternion);
+
+        weightPlate.position.copy(boxBody.position);
+        weightPlate.quaternion.copy(boxBody.quaternion);
+
+        renderer.render(scene, camera);
+    }
+
+    renderer.setAnimationLoop(animate);
+
+    window.addEventListener('resize', function () {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+
+    // ================================
+
+    // // scene setup
+    // const scene = new THREE.Scene();
+    // const renderer = new THREE.WebGLRenderer();
+    // renderer.setSize(window.innerWidth, window.innerHeight);
+    // document.body.appendChild(renderer.domElement);
+
+    // // camera setup
+    // const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    // camera.position.z = 5;
+    // const controls = new OrbitControls(camera, renderer.domElement)
+
+    // // create lights
+    // const light = new THREE.PointLight()
+    // light.position.set(2, 2, 2)
+    // scene.add(light)
+
+    // const ambientLight = new THREE.AmbientLight()
+    // scene.add(ambientLight)
+
+    // // weight plate custom model
+    // const fbxLoader = new FBXLoader()
+    // fbxLoader.load('blender/weight-plate.fbx', (object) => {
+    //     scene.add(object)
+    // },
+    //     (xhr) => {
+    //         console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+    //     },
+    //     (error) => {
+    //         console.log(error)
+    //     }
+    // )
+
+    // function animate() {
+    //     requestAnimationFrame(animate);
+
+    //     renderer.render(scene, camera);
+    // }
+
+    // animate();
 }
 
 export default Home
